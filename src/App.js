@@ -218,41 +218,6 @@ import imgTest from './img/img.jpg';
 //   )
 // }
 
-/////////////////Display content//////////////////
-
-function UserGreeting() {
-  const [imgName, setImgName] = useState('img.jpg')
-  const img = require(`./img/${imgName}`)
-  return (
-    <>
-
-      <h1 onClick={() => setImgName('test.png')}>Welcome</h1>
-
-      <img src={img} alt="test" />
-
-      <img src={require('./img/img.jpg')} alt='test' />
-
-      <img src={imgTest} alt="test" />
-
-    </>
-  )
-}
-
-function GuestGreeting() {
-  return (
-    <h1>Please Login</h1>
-  )
-}
-
-export function Greeting(props) {
-  const isLoggedIn = props.isLoggedIn;
-
-  if (isLoggedIn) {
-    return <UserGreeting />
-  }
-  return <GuestGreeting />
-}
-
 // BT 
 function Display() {
   const [number, setNumber] = useState(0);
@@ -273,53 +238,57 @@ function Display() {
   )
 }
 
+
 // List and key
 
-export function NumberList() {
-  // const numbers = [1,2,3,4,5];
-  const persons = [{
-    id: 0,
-    name: 'Creola Katherine Johnson',
-    profession: 'mathematician',
-    accomplishment: 'spaceflight calculations',
-    imageId: './img/img.jpg'
-  }, {
-    id: 1,
-    name: 'Mario José Molina-Pasquel Henríquez',
-    profession: 'chemist',
-    accomplishment: 'discovery of Arctic ozone hole',
-    imageId: './img/img.jpg'
-  }, {
-    id: 2,
-    name: 'Mohammad Abdus Salam',
-    profession: 'physicist',
-    accomplishment: 'electromagnetism theory',
-    imageId: './img/img.jpg'
-  }];
+// function ListItem(props) {
+//   return(
+//   )
+// }
 
-  function checkId(people) {
-    return people.id > 0;
-  }
+// export function NumberList() {
+//   // const numbers = [1,2,3,4,5];
+//   const persons = [{
+//     id: 0,
+//     name: 'Creola Katherine Johnson',
+//     profession: 'mathematician',
+//     accomplishment: 'spaceflight calculations',
+//     imageId: './img/img.jpg'
+//   }, {
+//     id: 1,
+//     name: 'Mario José Molina-Pasquel Henríquez',
+//     profession: 'chemist',
+//     accomplishment: 'discovery of Arctic ozone hole',
+//     imageId: './img/img.jpg'
+//   }, {
+//     id: 2,
+//     name: 'Mohammad Abdus Salam',
+//     profession: 'physicist',
+//     accomplishment: 'electromagnetism theory',
+//     imageId: './img/img.jpg'
+//   }];
 
-  const filterPerson = persons.filter(checkId);
+//   function checkId(people) {
+//     return people.id > 0;
+//   }
 
-  
+//   const filterPerson = persons.filter(checkId);
 
-  const listItems = filterPerson.map((person) =>
-    <li key={person.id} >
-      <b>{person.name}</b>
-      <img alt='test' src={require(`${person.imageId}`)} width='100'  />
-      <p>{person.profession}</p>
-      <p>{person.accomplishment}</p>
 
-    </li>
-  );
-  return (
-    <ul>
-      {listItems}
-    </ul>
-  );
-}
+//   const listItems = filterPerson.map((person) =>
+//     <div key={person.id}>
+//       <b style={{color:"red"}}>{person.name}</b>
+//       <img alt='test' src={require(`${person.imageId}`)} width='100'  />
+//       <p>{person.profession}</p>
+//       <p>{person.accomplishment}</p>
+//     </div>
+//   );
+//   return (
+//     <div>
+//       {listItems}
+//     </div>
+//   );
+// }
 
 
 

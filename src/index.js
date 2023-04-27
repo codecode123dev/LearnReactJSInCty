@@ -3,8 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {  Greeting,Counting,NumberList } from './App';
+import {  Greeting,Counting } from './App';
 
+import { NumberList } from './components/NumberList';
+
+import Test  from './components';
+
+import {NameForm, EssayForm,Selection} from './components/Form';
+
+import {Focus} from './components/Exercise';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // function Clock(props) {
@@ -83,15 +90,24 @@ class Clock extends React.Component {
 
 root.render(
   // <App1 />
-  // <App/>,
+  // <App/>
   // <App isLoggedIn={true}/>
   // <Greeting isLoggedIn={true} />
   /* <Counting/> */
-  <>
-  <NumberList/>
-  </>
+  // <>
+  // <Test />
+  // {/* <Form/> */}
+  // </>
 
-  // document.getElementById('root')
+  // <NameForm>
+  //   <p>Test</p>
+  //   <p>vsfjvjsbvsjdbvdjsb</p>
+  // </NameForm>
+  // <Focus/>
+  <NameForm/>
+  
+
+
 );
 // root.render(
 //   <App/>
