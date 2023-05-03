@@ -12,7 +12,9 @@ import Test  from './components';
 import {NameForm, EssayForm,Selection} from './components/Form';
 
 import {Focus} from './components/Exercise';
+import{ToDoList} from './components/TodoList'
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// import { Clock } from './components/Clock';
 
 // function Clock(props) {
 //   return (
@@ -33,6 +35,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // setInterval(tick, 1000);
 
 // use class
+
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -63,9 +66,43 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
+
         <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <button onClick={this.componentWillUnmount()}>click</button>
       </div>
     );
+  }
+}
+class UnClock extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      hide : false
+    };
+  }
+
+  hideComponent = () =>{
+    this.setState({
+      hide : true
+    })
+  }
+  
+
+  changeComponent = () =>{
+
+    if(!this.state.hide){
+      return <Clock/>
+    }
+    return null
+  }
+
+  render(){
+    return(
+      <div>
+        {this.changeComponent()}
+        <button onClick={this.hideComponent}>Hide Clock</button>
+      </div>
+    )
   }
 }
 
@@ -104,7 +141,8 @@ root.render(
   //   <p>vsfjvjsbvsjdbvdjsb</p>
   // </NameForm>
   // <Focus/>
-  <NameForm/>
+  // <NameForm/>
+  <ToDoList/>
   
 
 

@@ -28,6 +28,8 @@ function UserGreeting() {
   }
   
   export function Greeting(props) {
+
+    
     const isLoggedIn = props.isLoggedIn;
   
     if (isLoggedIn) {
