@@ -12,7 +12,11 @@ import Test  from './components';
 import {NameForm, EssayForm,Selection} from './components/Form';
 
 import {Focus} from './components/Exercise';
-import{ToDoList} from './components/TodoList'
+import{ToDoList} from './components/TodoList';
+
+import {TestApp} from './components/Test';
+
+import {Product} from './components/TestCRUD'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // import { Clock } from './components/Clock';
 
@@ -143,6 +147,9 @@ root.render(
   // <Focus/>
   // <NameForm/>
   <ToDoList/>
+  // <TestApp/>
+
+  // <Product/>
   
 
 
